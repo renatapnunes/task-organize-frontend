@@ -6,7 +6,6 @@ import http from '../services/api';
 
 function Provider({ children }) {
   const [tasks, setTasks] = useState([]);
-  console.log('PROVIDER');
 
   useEffect(() => {
     const getTasks = async () => {
@@ -19,6 +18,7 @@ function Provider({ children }) {
 
   const contextValue = {
     tasks,
+    setTasks,
   };
 
   return (
