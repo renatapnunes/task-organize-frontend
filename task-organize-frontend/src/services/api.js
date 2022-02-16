@@ -19,9 +19,9 @@ const http = {
       return error.response.status;
     }
   },
-  updateTask: async ({ id, task, status, created }) => {
+  updateTask: async ({ _id, task, status, created }) => {
     try {
-      const response = await api.put(`/task/${id}`, { task, status, created });
+      const response = await api.put(`/task/${_id}`, { task, status, created });
       return response.data;
     } catch (error) {
       return error.response.status;

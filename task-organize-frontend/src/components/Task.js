@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+
+import Context from '../context/Context';
 
 function Task({ taskData }) {
   const { _id, task, status, created, update } = taskData;
+  const { setTaskEdit } = useContext(Context);
 
   return (
     <li value={ _id }>
@@ -10,7 +13,12 @@ function Task({ taskData }) {
       <div>{ created }</div>
       <div>{ update }</div>
       <div>{ status }</div>
-      <button type="button">Editar</button>
+      <button
+        type="button"
+        onClick={ () => setTaskEdit(taskData) }
+      >
+        Editar
+      </button>
       <button type="button">Excluir</button>
     </li>
   );
