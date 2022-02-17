@@ -17,7 +17,7 @@ function TaskInput() {
     await http.updateTask(taskEdit);
     const results = await http.getTasks();
     setTasks(results);
-    setTaskData({ task: '', status: 'PENDENTE' });
+    setTaskEdit({});
   };
 
   const handleChange = ({ target }) => {
@@ -33,7 +33,9 @@ function TaskInput() {
     if ('task' in taskEdit) {
       return (
         <button
+          className="button-edit"
           type="button"
+          // disabled={ !taskEdit.task }
           onClick={ clickEdit }
         >
           Editar
@@ -43,7 +45,9 @@ function TaskInput() {
 
     return (
       <button
+        className="button-add"
         type="button"
+        disabled={ !taskData.task }
         onClick={ clickAdd }
       >
         Adicionar
@@ -54,6 +58,7 @@ function TaskInput() {
   return (
     <form>
       <input
+        className={ 'task' in taskEdit ? 'input-task-edit' : 'input-task' }
         type="text"
         placeholder="Digite uma terefa..."
         name="task"
@@ -61,6 +66,7 @@ function TaskInput() {
         onChange={ (event) => handleChange(event) }
       />
       <select
+        className={ 'task' in taskEdit ? 'select-task-edit' : 'select-task' }
         name="status"
         value={ 'task' in taskEdit ? taskEdit.status : taskData.status }
         onChange={ (event) => handleChange(event) }

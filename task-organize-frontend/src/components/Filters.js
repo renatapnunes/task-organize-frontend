@@ -8,8 +8,8 @@ import http from '../services/api';
 const RADIO_BUTTONS = [
   { code: 'asc', text: 'Alfabética (A-Z)' },
   { code: 'desc', text: 'Alfabética (Z-A)' },
-  { code: 'created-asc', text: 'Criação (mais atual)' },
-  { code: 'created-desc', text: 'Criação (menos atual)' },
+  { code: 'created-desc', text: 'Data de criação (mais recente)' },
+  { code: 'created-asc', text: 'Data de criação (menos recente)' },
 ];
 
 const ONE_NEGATIVE = -1;
@@ -51,22 +51,26 @@ function Filters() {
   }, [filters, tasks]);
 
   return (
-    <div>
-      <div>
+    <div className="filters">
+      <div className="status-filter">
+        Tarefas:
         { ['TODAS', 'PENDENTE', 'EM ANDAMENTO', 'PRONTO'].map((status, index) => (
           <button
+            className="button-status"
             key={ index }
             type="button"
             onClick={ () => setFilters({ ...filters, status }) }
           >
-            { status }
+            { filters.status === status ? `${status} ✔` : status }
           </button>
         ))}
       </div>
-      <div>
+      <div className="sort-tasks">
+        Ordem:
         { RADIO_BUTTONS.map(({ code, text }, index) => (
-          <label htmlFor={ code } key={ index }>
+          <label className="label" htmlFor={ code } key={ index }>
             <input
+              className="radio"
               type="radio"
               id={ code }
               name="sort"
@@ -78,7 +82,7 @@ function Filters() {
           </label>
         )) }
       </div>
-      <button type="button" onClick={ clickDeleteAll }>
+      <button className="delete-all" type="button" onClick={ clickDeleteAll }>
         Excluir Tarefas
       </button>
     </div>
