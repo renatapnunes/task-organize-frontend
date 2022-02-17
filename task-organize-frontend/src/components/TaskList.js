@@ -4,14 +4,18 @@ import Context from '../context/Context';
 import Task from './Task';
 
 function TaskList() {
-  const { tasks } = useContext(Context);
+  const { tasksFiltered, loading } = useContext(Context);
 
-  if (!tasks.length) return <span>Loading...</span>;
+  if (loading) return <span>Loading...</span>;
+
+  if (!tasksFiltered.length) return <span>Nenhuma tarefa adicionada</span>;
 
   return (
-    <ul>
-      { tasks.map((task, index) => <Task key={ index } taskData={ task } />) }
-    </ul>
+    <div>
+      <ul>
+        { tasksFiltered.map((task, index) => <Task key={ index } taskData={ task } />) }
+      </ul>
+    </div>
   );
 }
 

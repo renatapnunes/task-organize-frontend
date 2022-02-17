@@ -5,7 +5,7 @@ import Context from '../context/Context';
 import http from '../services/api';
 
 function Task({ taskData }) {
-  const { _id, task, status, created, update } = taskData;
+  const { _id, task, status, created } = taskData;
   const { setTaskEdit, setTasks } = useContext(Context);
 
   const clickDelete = async () => {
@@ -18,7 +18,6 @@ function Task({ taskData }) {
     <li value={ _id }>
       <div>{ task }</div>
       <div>{ created }</div>
-      <div>{ update }</div>
       <div>{ status }</div>
       <button
         type="button"
@@ -28,7 +27,7 @@ function Task({ taskData }) {
       </button>
       <button
         type="button"
-        onClick={ () => clickDelete() }
+        onClick={ clickDelete }
       >
         Excluir
       </button>
