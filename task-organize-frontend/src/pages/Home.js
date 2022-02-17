@@ -1,9 +1,13 @@
 import React from 'react';
 
+import TaskInput from '../components/TaskInput';
+import TaskList from '../components/TaskList';
+
 function Home() {
   return (
     <div>
-      <h1>Home</h1>
+      <TaskInput />
+      <TaskList />
     </div>
   );
 }
