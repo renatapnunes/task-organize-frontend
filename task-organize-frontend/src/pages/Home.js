@@ -7,9 +7,19 @@ import Filters from '../components/Filters';
 function Home() {
   return (
     <div>
+      <header>
+        <h1>
+          <span>TASK</span>
+          <span>ORGANIZE</span>
+        </h1>
+        <Filters />
+      </header>
       <TaskInput />
-      <Filters />
       <TaskList />
+      <footer>
+        <span>Projeto desenvolvido no curso da Trybe</span>
+        <span>Renata Nunes - 2022</span>
+      </footer>
     </div>
   );
 }
