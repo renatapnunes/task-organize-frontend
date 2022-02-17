@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.home{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+header {
+  background-color: #a4e2f8;
+  border-radius: 0 2rem 2rem 0 ;
+  box-shadow: 0.1em 0.1em 0.5em #b0dee9;
+  color: white;
+  min-height: 100vh;
+  width: 20rem;
+}
+
+h1, .filters, .status-filter, .sort-tasks {
+  align-items:flex-start;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: initial;
+  margin: 1em 0.5em;
+}
+
+h1 {
+  color: #1b4aa4;
+}
+
+.button-status {
+  background-color: white;
+  border: 0.1rem solid #43bedc;
+  border-radius: 0.3rem;
+  box-shadow: 0.1em 0.1em 0.3em #5b92a0;
+  color: #43bedc;
+  font-weight: 500;
+  padding: 0.3em 0.6em;
+  margin: 0.5em;
+}
+
+.button-status:hover {
+  background-color: white;
+  border: 0.15rem solid #43bedc;
+  border-radius: 0.3rem;
+  box-shadow: 0.1em 0.1em 0.3em #5b92a0;
+  color: #43bedc;
+  font-weight: 500;
+  padding: 0.3em 0.6em;
+  margin: 0.5em;
+}
+
+.label {
+  font-weight: 500;
+  margin-left: 0.3em;
+  padding: 0.3em;
+}
+
+.delete-all {
+  background-color: white;
+  border: 0.1rem solid #f0515f;
+  border-radius: 0.3rem;
+  box-shadow: 0.1em 0.1em 0.3em #5b92a0;
+  color: #f0515f;
+  font-weight: 600;
+  padding: 0.3em;
+  margin: auto;
+  margin-top: 3em;
+}
+
+.delete-all:hover {
+  background-color: #f0515f;
+  border: 0.1rem solid #f0515f;
+  border-radius: 0.3rem;
+  box-shadow: 0.1em 0.1em 0.2em #3b90a5;
+  color: white;
+  font-weight: 600;
+  padding: 0.3em;
+  margin: auto;
+  margin-top: 3em;
+}
+
+form {
+  margin: 4rem 30rem;
+}
+
+.input-task, .input-task-edit {
+  background-color: white;
+  border: 0.1rem solid #43bedc;
+  border-radius: 0.3rem;
+  box-shadow: 0.1em 0.1em 0.3em #5b92a0;
+  color: #1b4aa4;
+  font-size: 1em;
+  font-weight: 500;
+  height: 2em;
+  padding: 0.2em 0.6em;
+  margin: 0.5em;
+}
+
+.select-task, .select-task-edit {
+  background-color: white;
+  border: 0.1rem solid #43bedc;
+  border-radius: 0.3rem;
+  box-shadow: 0.1em 0.1em 0.3em #5b92a0;
+  color: #1b4aa4;
+  font-size: 1em;
+  font-weight: 500;
+  height: 2.6em;
+  padding: 0.2em 0.6em;
+  margin: 0.5em;
+}
+
+.button-add, .button-edit {
+  background-color: #1b4aa4;
+  border: 0.1rem solid #1b4aa4;
+  border-radius: 0.3rem;
+  box-shadow: 0.1em 0.1em 0.3em #5b92a0;
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  height: 2.6em;
+  padding: 0.3em 1em;
+  margin: 0.5em;
+  width: 8em;
+}
+
+.button-add:hover, .button-edit:hover {
+  background-color: #1b4aa4;
+  border: 0.1rem solid #43bedc;
+  border-radius: 0.3rem;
+  box-shadow: 0.1em 0.1em 0.3em #5b92a0;
+  color: white;
+  font-size: 1em;
+  height: 2.6em;
+  padding: 0.3em 1em;
+  margin: 0.5em;
+  width: 8em;
+}
+
+.button-add:disabled, .button-edit:disabled  {
+  background-color: #64a4d8;
+  border: 0.1rem solid #64a4d8;
+  border-radius: 0.3rem;
+  box-shadow: 0.1em 0.1em 0.3em #5b92a0;
+  color: white;
+  font-size: 1em;
+  height: 2.6em;
+  padding: 0.3em 1em;
+  margin: 0.5em;
+  width: 8em;
+}
+
+.button-edit, .button-edit:hover, .button-edit:disabled,
+.input-task-edit, .select-task-edit {
+  box-shadow: 0.2em 0.2em 0.5em #3fccbc;
+}
+
+.tasks-image {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.main-img {
+  height: 30rem;
+  margin-left: 10rem;
+  margin-top: 10rem;
+}
+
+.task-card {
+  align-items: center;
+  border-radius: 0.6em;
+  color: #011a2e;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  margin-bottom: 1.5em;
+  margin-left: 6em;
+  padding: 1em;
+  width: 34em;
+}
+
+.task {
+  color: #011627;
+  font-size: 1.2em;
+  min-width: 16em;
+}
+
+.date {
+  color: #3b5d79;
+  font-size: 0.9em;
+  min-width: 16em;
+}
+
+.task-status {
+  border-radius: 0.6em;
+  color: white;
+  font-size: 1em;
+  height: 1.4em;
+  padding: 0.4em;
+  text-align: center;
+  width: 8em;
+}
+
+.edit-button, .delete-button {
+  background-color: white;
+  border: none;
+  border-radius: 3em;
+  margin: 0.4em;
+}
+
+.edit-img {
+  height: 2.3em;
+}
+
+.delete-img {
+  height: 2em;
+}
+
+footer {
+  color: #3b5d79;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  text-align: center;
+}
