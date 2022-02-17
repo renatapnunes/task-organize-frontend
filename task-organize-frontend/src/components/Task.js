@@ -2,10 +2,17 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import Context from '../context/Context';
+import http from '../services/api';
 
 function Task({ taskData }) {
   const { _id, task, status, created, update } = taskData;
-  const { setTaskEdit } = useContext(Context);
+  const { setTaskEdit, setTasks } = useContext(Context);
+
+  const clickDelete = async () => {
+    await http.deleteTask({ _id });
+    const results = await http.getTasks();
+    setTasks(results);
+  };
 
   return (
     <li value={ _id }>
@@ -19,7 +26,12 @@ function Task({ taskData }) {
       >
         Editar
       </button>
-      <button type="button">Excluir</button>
+      <button
+        type="button"
+        onClick={ () => clickDelete() }
+      >
+        Excluir
+      </button>
     </li>
   );
 }

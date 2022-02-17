@@ -27,9 +27,9 @@ const http = {
       return error.response.status;
     }
   },
-  deleteTask: async ({ id }) => {
+  deleteTask: async ({ _id }) => {
     try {
-      const response = await api.delete(`/task/${id}`, {});
+      const response = await api.delete(`/task/${_id}`, {});
       return response.data;
     } catch (error) {
       return error;
