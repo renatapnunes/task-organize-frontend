@@ -11,9 +11,11 @@ function TaskList() {
   if (!tasksFiltered.length) return <span>Nenhuma tarefa adicionada</span>;
 
   return (
-    <ul>
-      { tasksFiltered.map((task, index) => <Task key={ index } taskData={ task } />) }
-    </ul>
+    <div>
+      <ul>
+        { tasksFiltered.map((task, index) => <Task key={ index } taskData={ task } />) }
+      </ul>
+    </div>
   );
 }
 
