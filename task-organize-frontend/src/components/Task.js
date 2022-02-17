@@ -27,7 +27,7 @@ function Task({ taskData }) {
       </button>
       <button
         type="button"
-        onClick={ () => clickDelete() }
+        onClick={ clickDelete }
       >
         Excluir
       </button>

@@ -2,6 +2,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 
 import Context from '../context/Context';
+import http from '../services/api';
 
 const RADIO_BUTTONS = [
   { code: 'asc', text: 'Alfabética (A-Z)' },
@@ -20,6 +21,12 @@ function Filters() {
     if (a.task < b.task) { return ONE_NEGATIVE; }
     if (a.task > b.task) { return 1; }
     return 0;
+  };
+
+  const clickDeleteAll = async () => {
+    await http.deleteAllTasks();
+    const results = await http.getTasks();
+    setTasks(results);
   };
 
   const sortFunctions = {
@@ -70,6 +77,9 @@ function Filters() {
           </label>
         )) }
       </div>
+      <button type="button" onClick={ clickDeleteAll }>
+        Excluir Tarefas
+      </button>
     </div>
   );
 }
