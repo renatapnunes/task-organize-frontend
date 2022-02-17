@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable sonarjs/no-duplicate-string */
 import React, { useState, useContext, useEffect } from 'react';
 
